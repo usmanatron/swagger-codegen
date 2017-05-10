@@ -35,7 +35,7 @@ public class TypeScriptFetchClientCodegen extends AbstractTypeScriptClientCodege
     public void processOpts() {
         super.processOpts();
         supportingFiles.add(new SupportingFile("api.mustache", "", "api.ts"));
-        supportingFiles.add(new SupportingFile("git_push.sh.mustache", "", "git_push.sh"));
+        supportingFiles.add(new SupportingFile("../git_push.sh.mustache", "", "git_push.sh"));
         supportingFiles.add(new SupportingFile("README.md", "", "README.md"));
         supportingFiles.add(new SupportingFile("package.json.mustache", "", "package.json"));
         supportingFiles.add(new SupportingFile("typings.json.mustache", "", "typings.json"));

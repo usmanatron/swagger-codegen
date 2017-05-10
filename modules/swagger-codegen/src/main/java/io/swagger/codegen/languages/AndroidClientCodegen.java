@@ -119,7 +119,7 @@ public class AndroidClientCodegen extends DefaultCodegen implements CodegenConfi
     }
 
     @Override
-    public String escapeReservedWord(String name) {           
+    public String escapeReservedWord(String name) {
         if(this.reservedWordsMappings().containsKey(name)) {
             return this.reservedWordsMappings().get(name);
         }
@@ -408,7 +408,7 @@ public class AndroidClientCodegen extends DefaultCodegen implements CodegenConfi
         } else if ("httpclient".equals(getLibrary())) {
             addSupportingFilesForHttpClient();
         } else {
-            throw new IllegalArgumentException("Invalid 'library' option specified: '" + getLibrary() + "'. Must be 'httpclient' or 'volley' (default)"); 
+            throw new IllegalArgumentException("Invalid 'library' option specified: '" + getLibrary() + "'. Must be 'httpclient' or 'volley' (default)");
         }
 
     }
@@ -433,15 +433,15 @@ public class AndroidClientCodegen extends DefaultCodegen implements CodegenConfi
                 (sourceFolder + File.separator + invokerPackage).replace(".", File.separator), "ApiException.java"));
         supportingFiles.add(new SupportingFile("Pair.mustache",
                 (sourceFolder + File.separator + invokerPackage).replace(".", File.separator), "Pair.java"));
-        supportingFiles.add(new SupportingFile("git_push.sh.mustache", "", "git_push.sh"));
+        supportingFiles.add(new SupportingFile("../git_push.sh.mustache", "", "git_push.sh"));
         supportingFiles.add(new SupportingFile("gitignore.mustache", "", ".gitignore"));
 
         // gradle wrapper files
         supportingFiles.add(new SupportingFile( "gradlew.mustache", "", "gradlew" ));
         supportingFiles.add(new SupportingFile( "gradlew.bat.mustache", "", "gradlew.bat" ));
-        supportingFiles.add(new SupportingFile( "gradle-wrapper.properties.mustache", 
+        supportingFiles.add(new SupportingFile( "gradle-wrapper.properties.mustache",
                 gradleWrapperPackage.replace(".", File.separator), "gradle-wrapper.properties" ));
-        supportingFiles.add(new SupportingFile( "gradle-wrapper.jar", 
+        supportingFiles.add(new SupportingFile( "gradle-wrapper.jar",
                 gradleWrapperPackage.replace(".", File.separator), "gradle-wrapper.jar" ));
 
     }
@@ -452,7 +452,7 @@ public class AndroidClientCodegen extends DefaultCodegen implements CodegenConfi
         apiDocTemplateFiles.put( "api_doc.mustache", ".md" );
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
 
-        supportingFiles.add(new SupportingFile("git_push.sh.mustache", "", "git_push.sh"));
+        supportingFiles.add(new SupportingFile("../git_push.sh.mustache", "", "git_push.sh"));
         supportingFiles.add(new SupportingFile("gitignore.mustache", "", ".gitignore"));
         supportingFiles.add(new SupportingFile("pom.mustache", "", "pom.xml"));
         // supportingFiles.add(new SupportingFile("settings.gradle.mustache", "", "settings.gradle"));
@@ -486,9 +486,9 @@ public class AndroidClientCodegen extends DefaultCodegen implements CodegenConfi
         // gradle wrapper files
         supportingFiles.add(new SupportingFile( "gradlew.mustache", "", "gradlew" ));
         supportingFiles.add(new SupportingFile( "gradlew.bat.mustache", "", "gradlew.bat" ));
-        supportingFiles.add(new SupportingFile( "gradle-wrapper.properties.mustache", 
+        supportingFiles.add(new SupportingFile( "gradle-wrapper.properties.mustache",
                 gradleWrapperPackage.replace(".", File.separator), "gradle-wrapper.properties" ));
-        supportingFiles.add(new SupportingFile( "gradle-wrapper.jar", 
+        supportingFiles.add(new SupportingFile( "gradle-wrapper.jar",
                 gradleWrapperPackage.replace(".", File.separator), "gradle-wrapper.jar" ));
     }
 
